@@ -1,6 +1,3 @@
-int sensorPin=A0;
-int sensorValue=0;
-int firstLED=0;
 string voltage=LOW;
 string letter=[];
 string sentence = "Your homework assignment is overdue.";
@@ -8,7 +5,7 @@ string sentence = "Your homework assignment is overdue.";
 void setup(){
   pinMode(0, OUTPUT);
   for(i=0,i<sentence.length(),i++){
-    letter[i]=sentence.substring(0+i,1+i);
+    letter[i]=sentence.toUpperCase().substring(0+i,1+i);
   }
 }
 
