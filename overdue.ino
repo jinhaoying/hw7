@@ -2,7 +2,7 @@ int sensorPin=A0;
 int sensorValue=0;
 int firstLED=0;
 string voltage=LOW;
-int sLength=0;
+string letter=[];
 string sentence = "Your homework assignment is overdue.";
 
 void setup(){
@@ -13,28 +13,24 @@ void setup(){
 }
 
 void loop(){
-  if(sensorValue==0){
-    firstSwitch=LOW;
-    secondSwitch=LOW;
-    thirdSwitch=LOW;
+  for(i=0,i<sentence.length(),i++){
+    if(letter[i]=="A"||letter[i]="B"||letter[i]="C"||letter[i]="D"||letter[i]="E"||letter[i]="F"||letter[i]="G"){
+      voltage=HIGH;
+      delay(1000);
+   }
+    else if(letter[i]="H"||letter[i]="I"||letter[i]="J"||letter[i]="K"||letter[i]="L"||letter[i]="M"||letter[i]="N"){
+      voltage=HIGH;
+      delay(2000);
+    }
+    else if(letter[i]="O"||letter[i]="P"||letter[i]="Q"||letter[i]="R"||letter[i]="S"||letter[i]="T"||letter[i]="U"){
+      voltage=LOW;
+      delay(3000);
+    }
+    else if(letter[i]="V"||letter[i]="W"||letter[i]="X"||letter[i]="Y"||letter[i]="Z"||letter[i]=","||letter[i]="."||letter[i]=" "s){
+      voltage=LOW;
+      delay(4000);
+    }
+    digitalWrite(13,voltage);
   }
-  else if(sensorValue>0&&sensorValue<=258){
-    firstSwitch=LOW;
-    secondSwitch=LOW;
-    thirdSwitch=HIGH;
-  }
-  else if(sensorValue>258&&sensorValue<=516){
-    firstSwitch=LOW;
-    secondSwitch=HIGH;
-    thirdSwitch=HIGH;
-  }
-  else if(sensorValue>516&&sensorValue<=1032){
-    firstSwitch=HIGH;
-    secondSwitch=HIGH;
-    thirdSwitch=HIGH;
-  }
-  digitalWrite(13,voltage);
-
-  
-  delay(3000); //end of sentence
+  delay(5000); //end of sentence
 }
