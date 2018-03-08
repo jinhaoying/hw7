@@ -15,26 +15,26 @@ void loop() {
   Serial.println(sensorValue);
 
   if (sensorValue == 0){
-    digitalWrite(5, LOW);
-    digitalWrite(6, LOW);
-    digitalWrite(9, LOW);
+    digitalWrite(5,LOW);
+    digitalWrite(6,LOW);
+    digitalWrite(9,LOW);
   }
 
-  else if (sensorValue > 0 && sensorValue <= 341){
-   digitalWrite(5, HIGH);
-   digitalWrite(6, LOW);
-   digitalWrite(9, LOW);
+  else if (sensorValue>0&& sensorValue <= 258){
+   digitalWrite(5,HIGH);
+   digitalWrite(6,LOW);
+   digitalWrite(9,LOW);
   }
 
-  else if (sensorValue > 342 && sensorValue <= 682){
-   digitalWrite(5, HIGH);
-   digitalWrite(6, HIGH);
-   digitalWrite(9, LOW);
+  else if (sensorValue>258&&sensorValue<=516){
+   digitalWrite(5,HIGH);
+   digitalWrite(6,HIGH);
+   digitalWrite(9,LOW);
   }
 
-  else if (sensorValue > 683 && sensorValue <= 1032){
-   digitalWrite(5, HIGH);
-   digitalWrite(6, HIGH);
-   digitalWrite(9, HIGH);
+  else if (sensorValue>516&&sensorValue<=1032){
+   digitalWrite(5,HIGH);
+   digitalWrite(6,HIGH);
+   digitalWrite(9,HIGH);
   }
 }
