@@ -9,29 +9,23 @@ void setup() {
 }
 
 void loop() {
-  // read the value from the sensor:
   sensorValue = analogRead(sensorPin);
-  // turn the ledPin on
   Serial.println(sensorValue);
-
   if (sensorValue == 0){
     digitalWrite(5,LOW);
     digitalWrite(6,LOW);
     digitalWrite(9,LOW);
   }
-
-  else if (sensorValue>0&& sensorValue <= 258){
+  else if (sensorValue>0&&sensorValue<=258){
    digitalWrite(5,HIGH);
    digitalWrite(6,LOW);
    digitalWrite(9,LOW);
   }
-
   else if (sensorValue>258&&sensorValue<=516){
    digitalWrite(5,HIGH);
    digitalWrite(6,HIGH);
    digitalWrite(9,LOW);
   }
-
   else if (sensorValue>516&&sensorValue<=1032){
    digitalWrite(5,HIGH);
    digitalWrite(6,HIGH);
