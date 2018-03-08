@@ -1,6 +1,6 @@
 string voltage=LOW;
 string letter=[];
-string sentence = "You are following directions, but you took a wrong turn."
+string sentence = "You are following directions, but you took a wrong turn.";
 
 void setup(){
   pinMode(0, OUTPUT);
