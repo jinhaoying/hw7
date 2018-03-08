@@ -1,34 +1,42 @@
+int sensorPin=A0;
+int sensorValue=0;
+int firstLED=0;
+int secondLED=0;
+int thirdLED=0;
+string firstSwitch=LOW;
+string secondSwitch=LOW;
+string thirdSwitch=LOW;
 
-int sensorPin = A0;    // select the input pin for the potentiometer
-int ledPin = 0;
-int sensorValue = 0;  // variable to store the value coming from the sensor
-
-void setup() {
-  // declare the ledPin as an OUTPUT:
-  pinMode(ledPin, OUTPUT);
+void setup(){
+  pinMode(firstLED,OUTPUT);
+  pinMode(secondLED,OUTPUT);
+  pinMode(thirdLED,OUTPUT);
 }
 
-void loop() {
-  sensorValue = analogRead(sensorPin);
+void loop(){
+  sensorValue=analogRead(sensorPin);
   Serial.println(sensorValue);
-  if (sensorValue == 0){
-    digitalWrite(5,LOW);
-    digitalWrite(6,LOW);
-    digitalWrite(9,LOW);
+  if(sensorValue==0){
+    firstSwitch=LOW;
+    secondSwitch=LOW;
+    thirdSwitch=LOW;
   }
-  else if (sensorValue>0&&sensorValue<=258){
-   digitalWrite(5,HIGH);
-   digitalWrite(6,LOW);
-   digitalWrite(9,LOW);
+  else if(sensorValue>0&&sensorValue<=258){
+    firstSwitch=LOW;
+    secondSwitch=LOW;
+    thirdSwitch=HIGH;
   }
-  else if (sensorValue>258&&sensorValue<=516){
-   digitalWrite(5,HIGH);
-   digitalWrite(6,HIGH);
-   digitalWrite(9,LOW);
+  else if(sensorValue>258&&sensorValue<=516){
+    firstSwitch=LOW;
+    secondSwitch=HIGH;
+    thirdSwitch=HIGH;
   }
-  else if (sensorValue>516&&sensorValue<=1032){
-   digitalWrite(5,HIGH);
-   digitalWrite(6,HIGH);
-   digitalWrite(9,HIGH);
+  else if(sensorValue>516&&sensorValue<=1032){
+    firstSwitch=HIGH;
+    secondSwitch=HIGH;
+    thirdSwitch=HIGH;
   }
+  digitalWrite(5,firstSwitch);
+  digitalWrite(6,secondSwitch);
+  digitalWrite(9,thirdSwitch);
 }
