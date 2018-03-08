@@ -8,9 +8,7 @@ string secondSwitch=LOW;
 string thirdSwitch=LOW;
 
 void setup(){
-  pinMode(firstLED,OUTPUT);
-  pinMode(secondLED,OUTPUT);
-  pinMode(thirdLED,OUTPUT);
+  pinMode(0, OUTPUT);
 }
 
 void loop(){
