@@ -23,7 +23,7 @@ void loop(){
       voltage=LOW;
       delay(2000);
     }
-    else if(letter[i]="V"||letter[i]="W"||letter[i]="X"||letter[i]="Y"||letter[i]="Z"||letter[i]=","||letter[i]="."||letter[i]=" "s){
+    else if(letter[i]="V"||letter[i]="W"||letter[i]="X"||letter[i]="Y"||letter[i]="Z"||letter[i]=","||letter[i]="."||letter[i]=" "||letter[i]="'"){
       voltage=LOW;
       delay(1000);
     }
